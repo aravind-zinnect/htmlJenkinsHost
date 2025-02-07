@@ -4,16 +4,16 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/aravind-zinnect/simple-repo3.git'
+                git 'https://github.com/aravind-zinnect/htmlJenkinsHost.git'  // Use the correct repo
             }
         }
 
         stage('Deploy to Web Server') {
             steps {
                 script {
-                    def webServerPath = '"C:\\Program Files\\Apache24\\htdocs\\"' // Fix path format
-                    bat "del /F /Q ${webServerPath}\\index.html" // Remove existing file
-                    bat "copy index.html ${webServerPath}" // Copy correct file
+                    def webServerPath = "C:\\Program Files\\Apache24\\htdocs\\"
+                    bat "del /F /Q \"${webServerPath}index.html\""  // Delete old file
+                    bat "copy /Y index.html \"${webServerPath}\""  // Copy new file
                 }
             }
         }
