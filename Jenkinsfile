@@ -11,9 +11,9 @@ pipeline {
         stage('Deploy to Web Server') {
             steps {
                 script {
-                    def webServerPath = '"C:\\Program Files\\Apache24\\htdocs\\"' // Use quotes for spaces
-                    bat "del /F /Q ${webServerPath}\\index.html"  // Delete existing file
-                    bat "copy index.html ${webServerPath}"  // Copy the new file
+                    def webServerPath = '"C:\\Program Files\\Apache24\\htdocs\\"' // Fix path format
+                    bat "del /F /Q ${webServerPath}\\index.html" // Remove existing file
+                    bat "copy index.html ${webServerPath}" // Copy correct file
                 }
             }
         }
