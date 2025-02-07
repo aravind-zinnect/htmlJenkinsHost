@@ -11,7 +11,7 @@ pipeline {
         stage('Deploy to Web Server') {
             steps {
                 script {
-                    def webServerPath = 'C:\Program Files\Apache24\htdocs'
+                    def webServerPath = 'C:\Program Files\Apache24\htdocs\index.html.html'
                     bat "copy index.html ${webServerPath}"
                 }
             }
