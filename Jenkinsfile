@@ -12,7 +12,7 @@ pipeline {
             steps {
                 script {
                     def webServerPath = 'C:\Program Files\Apache24\htdocs'
-                    bat "copy index1.html ${webServerPath}"
+                    bat "copy index.html ${webServerPath}"
                 }
             }
         }
