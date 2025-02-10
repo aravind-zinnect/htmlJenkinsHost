@@ -15,17 +15,18 @@ pipeline {
                     def jenkinsWorkspace = env.WORKSPACE  // Get Jenkins workspace path
 
                     bat """
-                    echo Checking if file exists...
+                    echo Checking if index.html exists...
                     if exist "${webServerPath}index.html" (
-                        echo Deleting old index.html...
-                        del /F /Q "${webServerPath}index.html"
-                    ) else (
-                        echo No existing index.html found.
+                        echo Backing up old index.html...
+                        copy "${webServerPath}index.html" "${webServerPath}index_backup.html"
                     )
 
                     echo Copying new index.html...
                     copy /Y "${jenkinsWorkspace}\\index.html" "${webServerPath}"
-                    if %ERRORLEVEL% neq 0 echo ERROR: Failed to copy file!
+                    if %ERRORLEVEL% neq 0 (
+                        echo ERROR: Copy failed! Restoring old index.html...
+                        copy /Y "${webServerPath}index_backup.html" "${webServerPath}index.html"
+                    )
                     """
                 }
             }
