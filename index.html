@@ -1,10 +1,141 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Static Web Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A simple website example">
+  <meta name="keywords" content="HTML, CSS, Website, Example">
+  <meta name="author" content="Your Name">
+  <title>My Simple Website</title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    /* Header */
+    header {
+      background: #333;
+      color: #fff;
+      padding: 1rem 0;
+      text-align: center;
+    }
+
+    header h1 {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Navigation */
+    nav {
+      background: #444;
+      padding: 0.5rem;
+      text-align: center;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #f4f4f4;
+      text-decoration: underline;
+    }
+
+    /* Main Content */
+    main {
+      padding: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    section h2 {
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    section p {
+      margin-bottom: 1rem;
+    }
+
+    /* Footer */
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem 0;
+      margin-top: 2rem;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 0.5rem 0;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>Welcome to My Static Web Page</h1>
-    <p>This page is deployed using Jenkins!</p>
+  <!-- Header -->
+  <header>
+    <h1>Welcome to My Website</h1>
+    <p>Your go-to place for amazing content!</p>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <section id="home">
+      <h2>Home</h2>
+      <p>Welcome to the home section of our website. Here you'll find all the latest updates and news.</p>
+    </section>
+
+    <section id="about">
+      <h2>About Us</h2>
+      <p>We are a team of passionate individuals dedicated to providing the best content and services.</p>
+    </section>
+
+    <section id="services">
+      <h2>Our Services</h2>
+      <p>We offer a wide range of services including web development, design, and consulting.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Feel free to reach out to us at <a href="mailto:info@example.com">info@example.com</a>.</p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2023 My Simple Website. All rights reserved.</p>
+  </footer>
 </body>
 </html>
